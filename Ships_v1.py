@@ -127,19 +127,19 @@ def ShipModel(input_shape):
     X = Flatten()(X)
     X = Dense(1, activation='sigmoid', name='fc')(X)
 
-    # Create model. This creates your Keras model instance, you'll use this instance to train/test the model.
+    # Create model. This creates Keras model instance
     model = Model(inputs = X_input, outputs = X, name='ShipModel')
     
     
     return model
 
-#Step 1: create the model
+#Create the model
 shipModel = ShipModel(input_shape=(80, 80, 3))
 
-#Step 2: compile the model to configure the learning process
+#Compile the model to configure the learning process
 shipModel.compile(optimizer = "Adam", loss = "binary_crossentropy", metrics = ["accuracy"])
 
-#Step 3: train the model
+#Train the model
 shipModel.fit(x = X_train, y = y_train, epochs = 30, batch_size = 32)
 shipModel.save('/Users/vlad/Projects/ships-in-satellite-imagery/shipModel.h5')
 #shipModel = load_model('/Users/vlad/Projects/ships-in-satellite-imagery/shipModel.h5')
@@ -158,7 +158,7 @@ plot_model(shipModel, to_file='ShipModel.png')
 SVG(model_to_dot(shipModel).create(prog='dot', format='svg'))
 
 
-#CREATE A DICTIONARY OF TYPES OF CLOTHES
+#CREATE A DICTIONARY OF TYPES OF IMAGES
 class_dict = {0:'Ship: no', 1:'Ship: yes'}
 
 #CLASSIFY IMAGES BY SHIP OR NO SHIP
@@ -178,7 +178,7 @@ def classify_random_image():
 
 
 
-#USEFUL UTILITIES TO CREATE MORE DATA
+#USEFUL UTILITIES TO CREATE MORE DATA IF NECESSARY
 import re        
 # for builk changing file names in a given directory
 for f in os.listdir():
