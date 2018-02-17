@@ -145,7 +145,7 @@ shipModel.save('/Users/vlad/Projects/ships-in-satellite-imagery/shipModel.h5')
 #shipModel = load_model('/Users/vlad/Projects/ships-in-satellite-imagery/shipModel.h5')
 
 
-Test/evaluate the model
+#Test/evaluate the model
 preds = shipModel.evaluate(x = X_test, y = y_test)
 print()
 print ("Loss = " + str(preds[0]))
