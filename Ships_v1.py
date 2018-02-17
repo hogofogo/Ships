@@ -145,7 +145,7 @@ shipModel.save('/Users/vlad/Projects/ships-in-satellite-imagery/shipModel.h5')
 #shipModel = load_model('/Users/vlad/Projects/ships-in-satellite-imagery/shipModel.h5')
 
 
-#Step 4: test/evaluate the model
+Test/evaluate the model
 preds = shipModel.evaluate(x = X_test, y = y_test)
 print()
 print ("Loss = " + str(preds[0]))
@@ -156,6 +156,9 @@ shipModel.summary()
 
 plot_model(shipModel, to_file='ShipModel.png')
 SVG(model_to_dot(shipModel).create(prog='dot', format='svg'))
+
+
+
 
 
 #CREATE A DICTIONARY OF TYPES OF IMAGES
