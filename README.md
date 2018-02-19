@@ -10,7 +10,7 @@ The data labels are part of the file names; therefore I updated the file names f
 
 I started with a small network with only one convolutional layer which had been previously successful at correctly getting >90 percent classification on the testing set before the complications I made to the training set (see above). With the simple model, I could not get an acceptable performance on either the training or testing set and made changes to the model, adding two convolutional layers for the total of 3 followed by 1 fully connected layer with a sigmoid activation.
 
-With a modest amount of training I achieved >91 percent correct classification on the training set which can probably be further improved without a high risk of overfitting.
+With a modest amount of training I achieved >91 percent correct classification on the testing set which can probably be further improved without a high risk of overfitting.
 
 File Ships_v1 contains everything required for data prep, the trainable model, and the function for examining the image for the correctness of its classification classify_random_image().
 
